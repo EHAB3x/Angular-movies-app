@@ -3,3 +3,11 @@
 <app-segmented-control [config]="segments"></app-segmented-control>
 
 <app-input></app-input>
+
+<div class="movies-section">
+  @for (movie of movieCards; track $index) {
+    <div class="movie-card">
+      <app-movie-card [config]="movie"></app-movie-card>
+    </div>
+  }
+</div>

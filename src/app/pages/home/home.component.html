@@ -1,1 +1,21 @@
-<p>home works!</p>
+<div class="home-container">
+  <div class="home-content">
+    <p class="min-title">
+      Mailehereko
+    </p>
+
+    <p class="title">
+      {{title}}
+    </p>
+
+    <div class="search-section">
+      <app-input></app-input>
+    </div>
+
+    <div class="movie-cards-section">
+      @for (item of items; track $index) {
+        <app-movie-card></app-movie-card>
+      }
+    </div>
+  </div>
+</div>

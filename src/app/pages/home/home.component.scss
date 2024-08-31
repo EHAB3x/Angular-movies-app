@@ -31,12 +31,11 @@
         }
 
         .movie-cards-section{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 24px;
             .movie-card{
-                width: calc((100%/3) - 24px );
+                width: 100%;
                 min-width: 300px;
                 align-self: stretch;
             }

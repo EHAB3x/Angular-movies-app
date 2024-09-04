@@ -53,7 +53,11 @@ export class HomeComponent implements OnInit{
             rate : item.vote_average,
             onClick : ()=>{
               console.log("Click : ", item);
-
+              if (item.first_air_date) {
+                this.router.navigateByUrl(`tvshows/${item.id}`)
+              }else{
+                this.router.navigateByUrl(`movie/${item.id}`)
+              }
             }
           } as MovieCardConfig;
         }).filter((item) => item.movieName)

@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
 import { NavItemConfig } from '../../interfaces/ui-config/nav-item-config.interface';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -29,9 +30,19 @@ export class NavBarComponent {
     },
   ];
 
+  constructor(
+    private router : Router
+  ){
+
+  }
+
   selectedItem(nav : NavItemConfig){
     this.navItems.map((item : NavItemConfig)=>{
       item.active = nav.name === item.name
     })
+  }
+
+  homePage(){
+    this.router.navigateByUrl('')
   }
 }

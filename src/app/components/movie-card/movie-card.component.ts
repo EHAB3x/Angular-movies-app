@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { MovieCardConfig } from '../../interfaces/ui-config/movie-card-config.interface';
 import { RateChipComponent } from "../rate-chip/rate-chip.component";
 
@@ -11,4 +11,5 @@ import { RateChipComponent } from "../rate-chip/rate-chip.component";
 })
 export class MovieCardComponent {
   @Input() config!: MovieCardConfig
+  
 }

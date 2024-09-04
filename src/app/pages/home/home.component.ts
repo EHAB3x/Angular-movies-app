@@ -8,6 +8,7 @@ import { MovieCardConfig } from '../../interfaces/ui-config/movie-card-config.in
 import { TrendData, TrendsResult } from '../../interfaces/models/trends.interface';
 import { SegmentedControlConfig } from '../../interfaces/ui-config/segmented-control-config.interface';
 import { SegmentedControlComponent } from '../../components/segmented-control/segmented-control.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -35,7 +36,8 @@ export class HomeComponent implements OnInit{
     },
   ];
   constructor(
-    private genericHttpService: GenericHttpService
+    private genericHttpService: GenericHttpService,
+    private router : Router
   ){
 
   }
@@ -48,7 +50,11 @@ export class HomeComponent implements OnInit{
           return {
             img : Endpoints.IMAGE_BASE + `/w500/${item.backdrop_path}`,
             movieName : item.original_title,
-            rate : item.vote_average
+            rate : item.vote_average,
+            onClick : ()=>{
+              console.log("Click : ", item);
+
+            }
           } as MovieCardConfig;
         }).filter((item) => item.movieName)
       },

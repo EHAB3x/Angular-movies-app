@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit{
             movieName : item.original_title,
             rate : item.vote_average
           } as MovieCardConfig;
-        });
+        }).filter((item) => item.movieName)
       },
       error: (error : any)=>{
         console.error(error);

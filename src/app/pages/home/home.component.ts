@@ -29,7 +29,7 @@ import { TVData, TVResult } from '../../interfaces/models/tv.interface';
     HttpClientModule,
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   title: string = 'All';
@@ -84,9 +84,9 @@ export class HomeComponent implements OnInit {
               onClick: () => {
                 console.log('Click : ', item);
                 if (item.first_air_date) {
-                  this.router.navigateByUrl(`tvshows/${item.id}`);
+                  this.router.navigate(['tvshows', item.id], { queryParams: { type: 'tvshows' } });
                 } else {
-                  this.router.navigateByUrl(`movie/${item.id}`);
+                  this.router.navigate(['movie', item.id], { queryParams: { type: 'movie' } });
                 }
               },
             } as MovieCardConfig;
@@ -110,7 +110,7 @@ export class HomeComponent implements OnInit {
               rate: item.vote_average,
               onClick: () => {
                 console.log('Click : ', item);
-                this.router.navigateByUrl(`tvshows/${item.id}`);
+                this.router.navigate(['tvshows', item.id], { queryParams: { type: 'tvshows' } });
               },
             } as MovieCardConfig;
           })
@@ -132,7 +132,7 @@ export class HomeComponent implements OnInit {
               movieName: item.original_title,
               rate: item.vote_average,
               onClick: () => {
-                this.router.navigateByUrl(`movie/${item.id}`);
+                this.router.navigate(['movie', item.id], { queryParams: { type: 'movie' } });
               },
             } as MovieCardConfig;
           })

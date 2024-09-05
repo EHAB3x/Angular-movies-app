@@ -22,12 +22,12 @@ export class NavBarComponent {
       path:'tvshows',
       active: false,
     },
-    {
-      name:'Suggest me',
-      path:'suggests',
-      icon: 'bi bi-arrow-right',
-      active: false,
-    },
+    // {
+    //   name:'Suggest me',
+    //   path:'suggests',
+    //   icon: 'bi bi-arrow-right',
+    //   active: false,
+    // },
   ];
 
   constructor(

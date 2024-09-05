@@ -8,7 +8,8 @@
 
           @if (title) {
               <p class="title">
-                  {{title}} <span>({{movieCards.length}})</span>
+                {{title === 'All' ? movieCards.length + " Movies & TV Shows" : movieCards.length + " " + title }}
+                <span>(available)</span>
               </p>
           }
 

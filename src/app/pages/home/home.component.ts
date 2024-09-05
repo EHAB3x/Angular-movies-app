@@ -60,11 +60,11 @@ export class HomeComponent implements OnInit {
       item.onClick = () => {
         this.title = item.name;
         if (item.name.toLocaleLowerCase().includes('movie')) {
-          this.getMovies()
-        }else if(item.name.toLocaleLowerCase().includes('tv shows')){
+          this.getMovies();
+        } else if (item.name.toLocaleLowerCase().includes('tv shows')) {
           this.getTVShows();
-        }else{
-          this.getAllTrending()
+        } else {
+          this.getAllTrending();
         }
       };
     });
@@ -110,11 +110,7 @@ export class HomeComponent implements OnInit {
               rate: item.vote_average,
               onClick: () => {
                 console.log('Click : ', item);
-                if (item.first_air_date) {
-                  this.router.navigateByUrl(`tvshows/${item.id}`);
-                } else {
-                  this.router.navigateByUrl(`movie/${item.id}`);
-                }
+                this.router.navigateByUrl(`tvshows/${item.id}`);
               },
             } as MovieCardConfig;
           })

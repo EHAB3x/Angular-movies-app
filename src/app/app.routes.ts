@@ -24,5 +24,13 @@ export const routes: Routes = [
   {
     path:'movie/:series_id',
     component: DetailsComponent
-  }
+  },
+  {
+    path:'movies',
+    component: DetailsComponent
+  },
+  {
+    path:'tvshows',
+    component: DetailsComponent
+  },
 ];
